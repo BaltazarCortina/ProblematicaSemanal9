@@ -2,9 +2,6 @@ body {
     background-color: #4b4cb4;
     font-family: 'Open Sans', sans-serif;
 }
-
-
-
 form {
     padding: 20px 50px;
     margin: 20px auto 0;
@@ -19,8 +16,6 @@ input, label {
 label {
     color:#2c2c2c;
 }
-
-
 .container {
     max-width: 1200px;
     margin: auto;
@@ -90,7 +85,6 @@ label {
 .underline {
     text-decoration: underline;
 }
-
 #login {
     margin-top: 200px;
 }
@@ -159,7 +153,6 @@ label {
         width: 460px;
     }
 }
-
 @media only screen and (max-height: 900px) {
     #register {
         margin-top: 100px;
