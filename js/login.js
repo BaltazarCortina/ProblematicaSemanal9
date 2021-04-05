@@ -1,16 +1,19 @@
 var validations = document.createElement('ul');
 
-formExists();
-numberOfFields(2);
-requiredFields();
-labels();
-linkToOtherPage('Register','register.html');
-checkButton('reset', 'Reset');
-checkButton('submit', 'Submit');
-passedEveryValidation();
+function runValidations() {
+    formExists();
+    numberOfFields(2);
+    requiredFields();
+    labels();
+    linkToOtherPage('Register','register.html');
+    checkButton('reset', 'Reset');
+    checkButton('submit', 'Submit');
+    passedEveryValidation();
 
-var results = document.getElementById('validation-results');
+    document.getElementById('run-validations').classList.add('hidden');
 
-results.appendChild(validations);
+    var results = document.getElementById('validation-results');
 
-results.classList.remove('hidden');
+    results.appendChild(validations);
+    results.classList.remove('hidden');
+}
