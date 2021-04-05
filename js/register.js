@@ -7,7 +7,7 @@ function runValidations() {
     labels();
     linkToOtherPage('Login','login.html');
     checkButton('reset', 'Reset');
-    checkButton('submit', 'Submit');
+    checkButton('submit', 'Sign up');
     passedEveryValidation();
 
     document.getElementById('run-validations').classList.add('hidden');

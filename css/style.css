@@ -21,7 +21,6 @@ label {
 }
 
 
-
 .container {
     max-width: 1200px;
     margin: auto;
@@ -38,21 +37,43 @@ label {
     border-radius: 6px;
     font-family: 'Open Sans', sans-serif;;
 }
-.field:focus {
-    background-color: #b8b8b8;
-    border: 2px solid #57b9ef;
+.field:focus, .field:hover {
+    border: 2px solid #4143a0;
+    outline: none;
+    background-color: #eaebff;
 }
-.button {
+.button1, .button2 {
     width: 30%;
     padding: 10px;
-    border: none;
     border-radius: 6px;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     font-size: 1em;
-    background-color: #4143a0;
     cursor: pointer;
+    outline: none;
+}
+.button1, .button1:active {
+    border: none;
+    background-color: #4143a0;
     color: #f2f2f2;
+}
+.button2 {
+    border: 2px solid #4143a0;
+    background-color: #ffffff;
+    color: #2c2c2c;
+}
+.button1:hover {
+    background-color: #7477b9;
+}
+.button2:hover {
+    border: 2px solid #7477b9;
+    background-color: #7477b9;
+    color: #ffffff;
+}
+.button2:active {
+    border: 2px solid #4143a0;
+    background-color: #4143a0;
+    color: #ffffff;
 }
 .form-button {
     margin: 10px 5%;
@@ -94,7 +115,7 @@ label {
     justify-content: center;
     width: 60%;
     padding: 20px 20px;
-    margin: 20px auto;
+    margin: 50px auto 0;
     box-sizing: border-box;
     border-radius: 10px;
     background-color: #ffffff;
