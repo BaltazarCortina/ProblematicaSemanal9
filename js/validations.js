@@ -64,6 +64,20 @@ function linkToOtherPage(page, link) {
     return;
 }
 
+function dontHaveAnAccount(register) {
+    try {
+        var link = document.getElementById('no-account');
+        if (link.getAttribute('href') != register) {
+            var text = 'The "Don\'t have an account?" link is not working.';
+            appendListElement(text);
+        }    
+    }
+    catch (e) {
+        var text = 'The "Don\'t have an account?" link doesn\'t exist.';
+        appendListElement(text);
+    }
+}
+
 function checkButton(type, name) {
     try {
         button = document.querySelector('.form-button[type='+type+']');
@@ -83,5 +97,8 @@ function passedEveryValidation() {
         var text = "Every validation has passed!";
         appendListElement(text);
         validations.querySelector('li').classList.add('passed');
-    }    
+    }
+    else {
+        validations.insertAdjacentHTML('afterbegin', '<li class="underline">Validations results:</li>');
+    }
 }

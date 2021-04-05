@@ -6,6 +6,7 @@ function runValidations() {
     requiredFields();
     labels();
     linkToOtherPage('Register','register.html');
+    dontHaveAnAccount('register.html');
     checkButton('reset', 'Reset');
     checkButton('submit', 'Sign in');
     passedEveryValidation();

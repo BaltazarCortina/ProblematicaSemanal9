@@ -87,12 +87,15 @@ label {
 .passed {
     color: green !important;
 }
+.underline {
+    text-decoration: underline;
+}
 
 #login {
     margin-top: 200px;
 }
 #register {
-    margin-top: 150px;
+    margin-top: 130px;
 }
 #main-section {
     width: 60%;
@@ -116,12 +119,24 @@ label {
 #navegation a:hover {
     color: #505050;  
 }
+#no-account {
+    display: block;
+    padding: 0 10px 10px;
+    text-align: end;
+    text-decoration: none;
+    font-size: 0.9em;
+    color: #505050;
+}
+#no-account:hover {
+    font-weight: bold;
+    color: #4143a0;
+}
 #validation {
     display: flex;
     justify-content: center;
     width: 60%;
     padding: 20px 20px;
-    margin: 50px auto 0;
+    margin: 50px auto 20px;
     box-sizing: border-box;
     border-radius: 10px;
     background-color: #ffffff;
@@ -137,4 +152,24 @@ label {
     font-weight: bold;
     font-size: 1em;
     color: rgb(155, 0, 0);
+}
+
+@media only screen and (max-width: 768px) {
+    #main-section, #validation {
+        width: 460px;
+    }
+}
+
+@media only screen and (max-height: 900px) {
+    #register {
+        margin-top: 100px;
+    }
+}
+@media only screen and (max-height: 800px) {
+    #register {
+        margin-top: 50px;
+    }
+    #login {
+        margin-top: 100px;
+    }
 }
