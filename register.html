@@ -7,13 +7,18 @@
     <title>Register</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu+Condensed&display=swap">
 </head>
 <body>
-    <div class="container">
+    <div id="register" class="container">
         <div id="main-section">
             <ul id="navegation" class="flex-container">
                 <li>
                     <a href="login.html">Login</a>
+                </li>
+                <li>
+                    |
                 </li>
                 <li class="active-page">
                     <a href="register.html">Register</a>
@@ -37,13 +42,15 @@
                 </label>
                 <input id="repeat-password" class="field" type="password" name="repeat-password" required placeholder="Confirm password">
                 <div class="flex-container">
-                    <input class="button" type="reset" value="Reset">
-                    <input class="button" type="submit" value="Submit">    
+                    <input class="button form-button" type="reset" value="Reset">
+                    <input class="button form-button" type="submit" value="Submit">    
                 </div>
             </form>
         </div>
-        <button id="run-validations" onclick="runValidations()">Run Validations</button>
-        <div id="validation-results">
+        <div id="validation">
+            <button id="run-validations" class="button" onclick="runValidations()">Run Validations</button>
+            <div id="validation-results">
+            </div>
         </div>
     </div>
     <script src="js/validations.js"></script>

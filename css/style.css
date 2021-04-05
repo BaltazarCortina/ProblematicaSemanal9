@@ -1,19 +1,10 @@
 body {
-    background-color: #b8b8b8;
-    font-family: Verdana, sans-serif;
+    background-color: #4b4cb4;
+    font-family: 'Open Sans', sans-serif;
 }
 
-ul li {
-    padding: 10px;
-    margin: 0 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.5em;
-    font-weight: bold;
-}
-a:link, a:visited {
-    text-decoration: none;
-    color: white;
-}
+
+
 form {
     padding: 20px 50px;
     margin: 20px auto 0;
@@ -26,7 +17,7 @@ input, label {
     font-size: 1em;
 }
 label {
-    color: white;
+    color:#2c2c2c;
 }
 
 
@@ -40,36 +31,83 @@ label {
     justify-content: center;
 }
 .active-page {
-    border-bottom: 2px solid red;
+    border-bottom: 3px solid #4143a0;
 }
 .field {
     border: 2px solid #b9b9b9;
     border-radius: 6px;
+    font-family: 'Open Sans', sans-serif;;
 }
 .field:focus {
     background-color: #b8b8b8;
-    border: 2px solid white;
+    border: 2px solid #57b9ef;
 }
 .button {
     width: 30%;
-    margin: 10px 5%;
-    font-family: Verdana, sans-serif;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Open Sans', sans-serif;
     font-weight: bold;
+    font-size: 1em;
+    background-color: #4143a0;
+    cursor: pointer;
+    color: #f2f2f2;
+}
+.form-button {
+    margin: 10px 5%;
 }
 .hidden {
-    visibility: hidden;
+    display: none;
 }
 .passed {
-    color: green;
+    color: green !important;
 }
 
-
+#login {
+    margin-top: 200px;
+}
+#register {
+    margin-top: 150px;
+}
 #main-section {
     width: 60%;
     padding-top: 30px;
-    margin: 200px auto 0;
-    background-color: #2c2c2c;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+#navegation li {
+    padding: 5px;
+    margin: 10px 5px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#navegation a:link, #navegation a:visited {
+    text-decoration: none;
+    color: #2c2c2c
+}
+#validation {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    padding: 20px 20px;
+    margin: 20px auto;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+#run-validations {
+    margin: 0 auto;
 }
 #validation-results {
-    
+    line-height: 1.5;
+}
+#validation-results li {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    color: rgb(155, 0, 0);
 }

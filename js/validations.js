@@ -66,7 +66,7 @@ function linkToOtherPage(page, link) {
 
 function checkButton(type, name) {
     try {
-        button = document.querySelector('.button[type='+type+']');
+        button = document.querySelector('.form-button[type='+type+']');
         if (button.getAttribute('value') != name) {
             var text = 'The name of the ' + name + ' button is wrong.';
             appendListElement(text);
@@ -82,6 +82,6 @@ function passedEveryValidation() {
     if (validations.getElementsByTagName('li').length === 0) {
         var text = "Every validation has passed!";
         appendListElement(text);
-        validations.classList.add('passed');
+        validations.querySelector('li').classList.add('passed');
     }    
 }
