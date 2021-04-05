@@ -32,6 +32,9 @@ label {
 .active-page {
     border-bottom: 3px solid #4143a0;
 }
+.nav-bar:hover {
+    border-bottom: 3px solid #7477b9;
+}
 .field {
     border: 2px solid #b9b9b9;
     border-radius: 6px;
@@ -108,7 +111,10 @@ label {
 }
 #navegation a:link, #navegation a:visited {
     text-decoration: none;
-    color: #2c2c2c
+    color: #2c2c2c;
+}
+#navegation a:hover {
+    color: #505050;  
 }
 #validation {
     display: flex;
