@@ -43,11 +43,15 @@ function requiredFields() {
 function labels() {
     var fields = document.getElementsByClassName('field');
     var labels = document.getElementsByTagName('label');
-    for (let index = 0; index < fields.length; index++) {
-        if (fields[index].getAttribute('id') != labels[index].getAttribute('for')) {
-            var text = 'One or more fields does not have an associated label.';
-            appendListElement(text);
-            return;
+    var text = 'One or more fields does not have an associated label.';
+    if (fields.length != labels.length) {
+        appendListElement(text);
+    } else {
+        for (let index = 0; index < fields.length; index++) {
+            if (fields[index].getAttribute('id') != labels[index].getAttribute('for')) {
+                appendListElement(text);
+                return;
+            }
         }
     }
 }

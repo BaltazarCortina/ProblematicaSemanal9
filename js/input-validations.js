@@ -16,7 +16,7 @@ function correcting (e) {
 }
 
 function validEmail(e) {
-    var validFormat = /@/;
+    var validFormat = /^([\w.\-+/!%]{1,64}|"[\w. ]{1,62}")@[1-9a-zA-Z\-]+(\.[a-zA-Z]+)*$/;          //Based on wikipedia's examples of valid and invalid email addresses
     var errorMessage = 'Enter a correct email address';
     if (!validFormat.test(e.target.value)) {
         validate(e, errorMessage);
@@ -24,9 +24,9 @@ function validEmail(e) {
 }
 
 function validName(e) {
-    var validFormat = /[a-zA-Z]/;
+    var validFormat = /^([A-Za-z]+( [A-Za-z]+)+)$/;
     var errorMessage = 'Enter your full name';
-    if (!validFormat.test(e.target.value)) {
+    if (!validFormat.test(e.target.value) || e.target.value.length < 6) {
         validate(e, errorMessage);
     }
 }
@@ -34,7 +34,7 @@ function validName(e) {
 function validPassword(e) {
     var validFormat = /[0-9a-zA-Z]/;
     var errorMessage = 'The password must contain at least 8 characters, including a number and a letter';
-    if (!validFormat.test(e.target.value)) {
+    if (!validFormat.test(e.target.value) || e.target.value.length < 8) {
         validate(e, errorMessage);
     }
 }
