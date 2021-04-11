@@ -66,7 +66,7 @@ function linkToOtherPage(page, link) {
 
 function dontHaveAnAccount(register) {
     try {
-        var link = document.getElementById('no-account');
+        var link = document.querySelector('#no-account a');
         if (link.getAttribute('href') != register) {
             var text = 'The "Don\'t have an account?" link is not working.';
             appendListElement(text);

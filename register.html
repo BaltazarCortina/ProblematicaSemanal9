@@ -25,22 +25,30 @@
                 </li>
             </ul>
             <form action="" method="post" autocomplete="on">
-                <label for="name">
-                    Full name:
-                </label>
-                <input id="name" class="field" type="text" name="name" required placeholder="Enter your name and surname">
-                <label for="email">
-                    Email:
-                </label>
-                <input id="email" class="field" type="email" name="email" required placeholder="Enter your email">
-                <label for="password">
-                    Password:
-                </label>
-                <input id="password" class="field" type="password" name="password" required placeholder="Enter your password">
-                <label for="repeat-password">
-                    Confirm  password:
-                </label>
-                <input id="repeat-password" class="field" type="password" name="repeat-password" required placeholder="Confirm password">
+                <div>
+                    <label for="name">
+                        Full name:
+                    </label>
+                    <input id="name" class="field" type="text" name="name" required placeholder="Enter your name and surname">    
+                </div>
+                <div>
+                    <label for="email">
+                        Email:
+                    </label>
+                    <input id="email" class="field" type="email" name="email" required placeholder="Enter your email">    
+                </div>
+                <div>
+                    <label for="password">
+                        Password:
+                    </label>
+                    <input id="password" class="field" type="password" name="password" required placeholder="Enter your password">    
+                </div>
+                <div>
+                    <label for="repeat-password">
+                        Confirm  password:
+                    </label>
+                    <input id="repeat-password" class="field" type="password" name="repeat-password" required placeholder="Confirm password">    
+                </div>
                 <div class="flex-container">
                     <input id="reset-button" class="button2 form-button" type="reset" value="Reset">
                     <input class="button1 form-button" type="submit" value="Sign up">    
@@ -48,12 +56,14 @@
             </form>
         </div>
         <div id="validation">
-            <button id="run-validations" class="button2" onclick="runValidations()">Run Validations</button>
+            <button id="run-validations" class="button2">Run Validations</button>
             <div id="validation-results">
             </div>
         </div>
     </div>
-    <script src="js/validations.js"></script>
-    <script src="js/register.js"></script>
+    <script src="js/dom-validations.js"></script>
+    <script src="js/dom-register.js"></script>
+    <script src="js/input-validations.js"></script>
+    <script src="js/input-register.js"></script>
 </body>
 </html>

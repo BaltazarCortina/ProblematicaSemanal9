@@ -85,6 +85,15 @@ label {
 .underline {
     text-decoration: underline;
 }
+.error, .error:hover {
+    border: 2px solid #ce2323;
+}
+.error-message {
+    padding: 0 10px 5px;
+    text-align: end;
+    font-size: 0.9em;
+    color: #ce2323;
+}
 #login {
     margin-top: 200px;
 }
@@ -117,11 +126,13 @@ label {
     display: block;
     padding: 0 10px 10px;
     text-align: end;
+}
+#no-account a:link, #no-account a:visited {
     text-decoration: none;
     font-size: 0.9em;
     color: #505050;
 }
-#no-account:hover {
+#no-account a:hover {
     font-weight: bold;
     color: #4143a0;
 }

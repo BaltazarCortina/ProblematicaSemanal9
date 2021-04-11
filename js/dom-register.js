@@ -1,5 +1,8 @@
 var validations = document.createElement('ul');
 
+var btn = document.querySelector('#run-validations');
+btn.addEventListener('click', runValidations);
+
 function runValidations() {
     formExists();
     numberOfFields(4);
@@ -10,7 +13,8 @@ function runValidations() {
     checkButton('submit', 'Sign up');
     passedEveryValidation();
 
-    document.getElementById('run-validations').classList.add('hidden');
+    btn.classList.add('hidden');
+    btn.removeEventListener('click', runValidations);
 
     var results = document.getElementById('validation-results');
 
