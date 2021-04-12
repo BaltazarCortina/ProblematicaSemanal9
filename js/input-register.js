@@ -7,5 +7,6 @@ var form = document.querySelector('form');
 fullName.addEventListener('blur', validName);
 email.addEventListener('blur', validEmail);
 password.addEventListener('blur', validPassword);
+password.addEventListener('blur', validPasswordChange);
 repeatPassword.addEventListener('blur', validRepeatPassword);
 form.addEventListener('submit', submitForm);
