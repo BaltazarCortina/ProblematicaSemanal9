@@ -1,7 +1,8 @@
-function appendListElement (text) {
+function appendListElement(text, elemClass = 'failed') {
     var listElement = document.createElement('li');
     var elementText = document.createTextNode(text);
     listElement.appendChild(elementText);
+    listElement.classList.add(elemClass);
     validations.appendChild(listElement);
 }
 
@@ -74,7 +75,7 @@ function dontHaveAnAccount(register) {
         if (link.getAttribute('href') != register) {
             var text = 'The "Don\'t have an account?" link is not working.';
             appendListElement(text);
-        }    
+        }
     }
     catch (e) {
         var text = 'The "Don\'t have an account?" link doesn\'t exist.';
@@ -84,11 +85,11 @@ function dontHaveAnAccount(register) {
 
 function checkButton(type, name) {
     try {
-        button = document.querySelector('.form-button[type='+type+']');
+        button = document.querySelector('.form-button[type=' + type + ']');
         if (button.getAttribute('value') != name) {
             var text = 'The name of the ' + name + ' button is wrong.';
             appendListElement(text);
-        }    
+        }
     }
     catch (e) {
         var text = 'There is not a ' + name + ' button.';
@@ -99,10 +100,19 @@ function checkButton(type, name) {
 function passedEveryValidation() {
     if (validations.getElementsByTagName('li').length === 0) {
         var text = "Every validation has passed!";
-        appendListElement(text);
-        validations.querySelector('li').classList.add('passed');
+        appendListElement(text, 'passed');
     }
     else {
-        validations.insertAdjacentHTML('afterbegin', '<li class="underline">Validations results:</li>');
+        validations.insertAdjacentHTML('afterbegin', '<li class="underline failed">Validations results:</li>');
     }
 }
+
+function showDiv() {
+    btn.classList.add('hidden');
+    btn.removeEventListener('click', runValidations);
+
+    var results = document.getElementById('validation-results');
+
+    results.appendChild(validations);
+    results.classList.remove('hidden');
+}   

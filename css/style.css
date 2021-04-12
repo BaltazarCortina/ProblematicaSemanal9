@@ -80,10 +80,16 @@ label {
     display: none;
 }
 .passed {
-    color: green !important;
+    color: green;
+}
+.failed {
+    color: rgb(155, 0, 0);
 }
 .underline {
     text-decoration: underline;
+}
+.input-data {
+    color: #2c2c2c;
 }
 .error, .error:hover {
     border: 2px solid #ce2323;
@@ -93,6 +99,12 @@ label {
     text-align: end;
     font-size: 0.9em;
     color: #ce2323;
+}
+.disabled, .disabled:hover {
+    border: 2px solid #b9b9b9;
+    background-color: #b9b9b9;
+    color: #ffffff;
+    cursor: not-allowed;
 }
 #login {
     margin-top: 200px;
@@ -156,7 +168,6 @@ label {
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     font-size: 1em;
-    color: rgb(155, 0, 0);
 }
 
 @media only screen and (max-width: 768px) {

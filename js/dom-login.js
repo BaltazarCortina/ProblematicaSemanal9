@@ -13,12 +13,5 @@ function runValidations() {
     checkButton('reset', 'Reset');
     checkButton('submit', 'Sign in');
     passedEveryValidation();
-
-    btn.classList.add('hidden');
-    btn.removeEventListener('click', runValidations);
-
-    var results = document.getElementById('validation-results');
-
-    results.appendChild(validations);
-    results.classList.remove('hidden');
+    showDiv();
 }
