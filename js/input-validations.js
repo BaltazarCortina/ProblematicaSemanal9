@@ -1,16 +1,16 @@
 var submitBtn = document.querySelector('input[type=submit]');
 
-function errorFound(e, errorMessage) {
-    e.classList.add('error');
+function errorFound(eTarget, errorMessage) {
+    eTarget.classList.add('error');
 
     var message = document.createElement('div');
     message.innerText = errorMessage;
-    e.parentElement.appendChild(message);
+    eTarget.parentElement.appendChild(message);
     message.classList.add('error-message');
 
     submitBtn.classList.add('disabled');
 
-    e.addEventListener('focus', correcting);
+    eTarget.addEventListener('focus', correcting);
 }
 
 function correcting (e) {
@@ -59,10 +59,13 @@ function validPasswordChange (e) {
     var password = document.querySelector('#repeat-password');
     var errorMessage = 'The passwords don\'t match';
     if (e.target.value != password.value) {
-        errorFound(password, errorMessage);
+        if (!password.classList.contains('error')) {
+            errorFound(password, errorMessage);
+        }
     } else if (password.classList.contains('error')) {
         password.classList.remove('error');
         password.parentElement.querySelector('.error-message').remove();
+        password.removeEventListener('focus', correcting);
     }
     validateForm();
 }
@@ -89,7 +92,6 @@ function submitForm (e) {
             var text = fields[i].name.toUpperCase() + ': ' + fields[i].value;
             appendListElement(text, 'input-data');
         }
-        console.log('https://jsonplaceholder.typicode.com/users?' + email.name + '=' + email.value);
         fetch('https://jsonplaceholder.typicode.com/users?' + email.name + '=' + email.value);  
     }
 }
