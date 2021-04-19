@@ -80,18 +80,66 @@ function validRepeatPassword(e) {
     }
 }
 
-function submitForm (e) {
+function getFormData () {
+    var fields = document.querySelectorAll('.field');
+    showDiv();
+    validations.innerHTML = '<li class="underline input-data">Input data:</li>';
+    let formData = new Object();
+    for (let i = 0; i < fields.length; i++) {
+        var text = fields[i].name.toUpperCase() + ': ' + fields[i].value;
+        appendListElement(text, 'input-data');
+        if (fields[i].name != 'repeat-password') {
+            formData[fields[i].name] = fields[i].value;
+        }
+    }
+    return formData;
+}
+
+function handleRegister(e) {
     e.preventDefault();
     if (submitBtn.classList.contains('disabled')) {
         alert('One or more fields are not correct!')
     } else {
-        var fields = document.querySelectorAll('.field');
-        showDiv();
-        validations.innerHTML = '<li class="underline input-data">Input data:</li>';
-        for (let i = 0; i < fields.length; i++) {
-            var text = fields[i].name.toUpperCase() + ': ' + fields[i].value;
-            appendListElement(text, 'input-data');
-        }
-        fetch('https://jsonplaceholder.typicode.com/users?' + email.name + '=' + email.value);  
+        let formData = getFormData();
+        
+        console.log(formData);  //NO VA
+        
+        fetch('http://localhost:4000/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(res => res.json())
+        // .then((res => {
+        //     if (res.result === 'Success') {
+        //         // text = '';
+        //         message = document.querySelector('form');
+        //         message.insertAdjacentHTML('afterbegin', '<p>Successfully created user!</p>');
+        //     }
+        // }))
+        .then(res => console.log(res.result))
+    }
+}
+
+function handleLogin(e) {
+    e.preventDefault();
+    if (submitBtn.classList.contains('disabled')) {
+        alert('One or more fields are not correct!')
+    } else {
+        let formData = getFormData();
+        
+        console.log(formData);  //NO VA
+        
+        fetch('http://localhost:4000/login', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(res => res.json())
+        .then(res => console.log(res.result))
     }
 }
