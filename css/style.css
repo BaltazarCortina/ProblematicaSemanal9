@@ -106,6 +106,33 @@ label {
     color: #ffffff;
     cursor: not-allowed;
 }
+.register-successfull {
+    position: relative;
+    top: -20px;
+    text-align: center;
+    font-weight: bold;
+    color: green;
+}
+.login-successfull {
+    padding: 80px 0 120px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.6em;
+}
+.register-failed {
+    position: relative;
+    top: -20px;
+    text-align: center;
+    font-weight: bold;
+    color: #ce2323;
+}
+.login-failed {
+    position: relative;
+    top: -20px;
+    text-align: center;
+    font-weight: bold;
+    color: #ce2323;
+}
 #login {
     margin-top: 200px;
 }
@@ -168,13 +195,6 @@ label {
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     font-size: 1em;
-}
-#register-successfull {
-    position: relative;
-    top: -20px;
-    text-align: center;
-    font-weight: bold;
-    color: green;
 }
 
 @media only screen and (max-width: 768px) {
