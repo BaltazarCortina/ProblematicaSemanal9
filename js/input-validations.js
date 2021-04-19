@@ -95,15 +95,19 @@ function getFormData () {
     return formData;
 }
 
+function handleError(res) {
+    if (!res.ok) {
+        throw Error(res.status);
+    }
+    return res;
+}
+
 function handleRegister(e) {
     e.preventDefault();
     if (submitBtn.classList.contains('disabled')) {
         alert('One or more fields are not correct!')
     } else {
         let formData = getFormData();
-        
-        console.log(formData);  //NO VA
-        
         fetch('http://localhost:4000/register', {
             method: 'POST',
             headers: {
@@ -111,15 +115,15 @@ function handleRegister(e) {
             },
             body: JSON.stringify(formData)
         })
+        .then(res => handleError(res))
         .then(res => res.json())
-        // .then((res => {
-        //     if (res.result === 'Success') {
-        //         // text = '';
-        //         message = document.querySelector('form');
-        //         message.insertAdjacentHTML('afterbegin', '<p>Successfully created user!</p>');
-        //     }
-        // }))
-        .then(res => console.log(res.result))
+        .then(res => {
+            console.log(res.result);
+            registerSuccessfull();
+        })
+        .catch(error => {
+            console.log(error + '\nUser already exists');
+        })
     }
 }
 
@@ -129,9 +133,6 @@ function handleLogin(e) {
         alert('One or more fields are not correct!')
     } else {
         let formData = getFormData();
-        
-        console.log(formData);  //NO VA
-        
         fetch('http://localhost:4000/login', {
             method: 'PUT',
             headers: {
@@ -139,7 +140,26 @@ function handleLogin(e) {
             },
             body: JSON.stringify(formData)
         })
+        .then(res => handleError(res))
         .then(res => res.json())
-        .then(res => console.log(res.result))
+        .then(res => {
+            console.log(res.result);
+            loginSuccessfull();
+        })
+        .catch(error => {
+            console.log(error + '\nUser does not exist');
+        })
+    }
+}
+
+function loginSuccessfull() {
+
+}
+
+function registerSuccessfull() {
+    message = document.querySelector('#register-successfull');
+    if (message === null) {
+        message = document.querySelector('form');
+        message.insertAdjacentHTML('afterbegin', '<div id="register-successfull">Successfully created user!</div>');
     }
 }

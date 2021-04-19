@@ -169,6 +169,13 @@ label {
     font-weight: bold;
     font-size: 1em;
 }
+#register-successfull {
+    position: relative;
+    top: -20px;
+    text-align: center;
+    font-weight: bold;
+    color: green;
+}
 
 @media only screen and (max-width: 768px) {
     #main-section, #validation {
